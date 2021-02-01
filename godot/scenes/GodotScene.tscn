@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/GodotBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/BaseBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Controls.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 46.0822, 46.1907 )
+
+[node name="GodotScene" type="Node2D"]
+
+[node name="BaseBox" parent="." instance=ExtResource( 2 )]
+position = Vector2( 418.483, 1753.57 )
+rotation = 3.14159
+scale = Vector2( 9.03239, -0.794783 )
+z_index = -1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BaseBox"]
+rotation = 1.55908e-06
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseBox/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="BaseBox2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 45.3389, 820.619 )
+rotation = 3.14159
+scale = Vector2( 0.972492, -20.3423 )
+z_index = -1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BaseBox2"]
+rotation = 1.55908e-06
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseBox2/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="BaseBox3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 786.573, 810.311 )
+rotation = 3.14159
+scale = Vector2( 0.972492, -20.3423 )
+z_index = -1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BaseBox3"]
+rotation = 1.55908e-06
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseBox3/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Box" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 247.5 )
+
+[node name="Controls" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 360.0
+margin_right = 424.0
+margin_bottom = 39.0
+rect_scale = Vector2( 2, 2 )
+text = "12345"
+__meta__ = {
+"_edit_use_anchors_": false
+}

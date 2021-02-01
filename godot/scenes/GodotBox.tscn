@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 46.3842, 46.8014 )
+
+[node name="GodotBox" type="RigidBody2D"]
+mass = 0.510204
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="CollisionShape2D"]
+texture = ExtResource( 2 )
