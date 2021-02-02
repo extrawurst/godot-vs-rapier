@@ -48,9 +48,10 @@ shape = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 360.0
-margin_right = 424.0
-margin_bottom = 39.0
+margin_left = 1.49963
+margin_top = 12.0
+margin_right = 65.4996
+margin_bottom = 51.0
 rect_scale = Vector2( 2, 2 )
 text = "boxes: 0"
 __meta__ = {
@@ -59,9 +60,9 @@ __meta__ = {
 
 [node name="LabelFps" type="Label" parent="."]
 margin_left = 1.0
-margin_top = 1.0
+margin_top = 46.0
 margin_right = 65.0
-margin_bottom = 15.0
+margin_bottom = 60.0
 rect_scale = Vector2( 2, 2 )
 text = "fps"
 __meta__ = {
@@ -70,9 +71,9 @@ __meta__ = {
 
 [node name="LabelFps2" type="Label" parent="."]
 margin_left = 5.0
-margin_top = 110.0
+margin_top = 155.0
 margin_right = 115.0
-margin_bottom = 209.0
+margin_bottom = 254.0
 rect_scale = Vector2( 2, 2 )
 text = "physics done in godot using built-in physics"
 autowrap = true
@@ -82,9 +83,9 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="."]
 margin_left = 5.0
-margin_top = 40.0
+margin_top = 85.0
 margin_right = 130.0
-margin_bottom = 65.0
+margin_bottom = 110.0
 rect_scale = Vector2( 2, 2 )
 text = "switch to rapier"
 __meta__ = {

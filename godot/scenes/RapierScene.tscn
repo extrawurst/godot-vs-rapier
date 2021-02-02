@@ -6,12 +6,14 @@
 
 [node name="world" type="Node2D" parent="."]
 script = ExtResource( 1 )
-gravity = Vector2( 0, 98 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 391.649
-margin_right = 431.649
-margin_bottom = 14.0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 3.00006
+margin_top = 13.5
+margin_right = 57.0001
+margin_bottom = 27.5
 rect_scale = Vector2( 2, 2 )
 text = "boxes: 0"
 __meta__ = {
@@ -19,21 +21,21 @@ __meta__ = {
 }
 
 [node name="LabelFps" type="Label" parent="."]
-margin_left = 5.29214
-margin_top = 4.76329
-margin_right = 59.2921
-margin_bottom = 18.7633
+margin_left = 2.29214
+margin_top = 52.7633
+margin_right = 56.2921
+margin_bottom = 66.7633
 rect_scale = Vector2( 2, 2 )
-text = "boxes: 0"
+text = "FPS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelDesc" type="Label" parent="."]
-margin_left = 5.0
-margin_top = 110.0
-margin_right = 115.0
-margin_bottom = 226.0
+margin_left = 2.0
+margin_top = 158.0
+margin_right = 112.0
+margin_bottom = 274.0
 rect_scale = Vector2( 2, 2 )
 text = "physics done in gdnative rust using rapier"
 autowrap = true
@@ -43,10 +45,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 5.0
-margin_top = 40.0
-margin_right = 130.0
-margin_bottom = 65.0
+margin_left = 2.0
+margin_top = 88.0
+margin_right = 127.0
+margin_bottom = 113.0
 rect_scale = Vector2( 2, 2 )
 text = "switch to godot"
 __meta__ = {
