@@ -29,11 +29,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LabelDesc" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 110.0
+margin_right = 115.0
+margin_bottom = 226.0
+rect_scale = Vector2( 2, 2 )
+text = "physics done in gdnative rust using rapier"
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Button" type="Button" parent="."]
-margin_left = 6.17819
-margin_top = 34.8165
-margin_right = 131.178
-margin_bottom = 60.8165
+margin_left = 5.0
+margin_top = 40.0
+margin_right = 130.0
+margin_bottom = 65.0
 rect_scale = Vector2( 2, 2 )
 text = "switch to godot"
 __meta__ = {
