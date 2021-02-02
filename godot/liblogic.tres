@@ -2,4 +2,5 @@
 
 [resource]
 entry/OSX.64 = "res://lib/liblogic.dylib"
+entry/iOS.arm64 = "res://lib/ios/liblogic.a"
 dependency/OSX.64 = [  ]
