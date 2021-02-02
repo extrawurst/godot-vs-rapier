@@ -5,7 +5,7 @@ authors = ["Stephan Dilly <dilly.stephan@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-gdnative = "0.9.1"
+gdnative = "0.9.2"
 rapier2d = "0.5"
 
 [lib]
