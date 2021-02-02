@@ -108,7 +108,9 @@ impl RapierWorld2D {
         let mut joints = self.joints.borrow_mut();
 
         let gravity = na::Vector2::new(self.gravity.x, self.gravity.y);
-        let integration_parameters = IntegrationParameters::default();
+        let mut integration_parameters = IntegrationParameters::default();
+        integration_parameters.max_position_iterations = 1;
+        integration_parameters.max_linear_correction = 1.;
 
         let event_handler = RapierEventHandler {};
 
