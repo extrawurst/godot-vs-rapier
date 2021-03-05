@@ -23,9 +23,9 @@ config/icon="res://icon.png"
 
 window/size/width=828
 window/size/height=1792
-window/size/resizable=false
 window/size/test_width=414
 window/size/test_height=896
+window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
 

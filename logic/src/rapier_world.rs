@@ -3,27 +3,11 @@ use gdnative::api::Engine;
 use gdnative::prelude::*;
 use rapier2d::{
     dynamics::{IntegrationParameters, JointSet, RigidBodyBuilder, RigidBodyHandle, RigidBodySet},
-    geometry::{
-        BroadPhase, ColliderBuilder, ColliderSet, ContactEvent, IntersectionEvent, NarrowPhase,
-    },
+    geometry::{BroadPhase, ColliderBuilder, ColliderSet, NarrowPhase},
     na,
-    pipeline::{EventHandler, PhysicsPipeline},
+    pipeline::PhysicsPipeline,
 };
 use std::cell::RefCell;
-
-struct RapierEventHandler {}
-
-impl EventHandler for RapierEventHandler {
-    /// Handle an intersection event.
-    ///
-    /// A intersection event is emitted when the state of intersection between two colliders changes.
-    fn handle_intersection_event(&self, _event: IntersectionEvent) {}
-    /// Handle a contact event.
-    ///
-    /// A contact event is emitted when two collider start or stop touching, independently from the
-    /// number of contact points involved.
-    fn handle_contact_event(&self, _event: ContactEvent) {}
-}
 
 #[derive(NativeClass)]
 #[inherit(Node2D)]
@@ -112,8 +96,6 @@ impl RapierWorld2D {
         integration_parameters.max_position_iterations = 1;
         integration_parameters.max_linear_correction = 1.;
 
-        let event_handler = RapierEventHandler {};
-
         pipeline.step(
             &gravity,
             &integration_parameters,
@@ -122,9 +104,8 @@ impl RapierWorld2D {
             &mut bodies,
             &mut colliders,
             &mut joints,
-            None,
-            None,
-            &event_handler,
+            &(),
+            &(),
         );
     }
 
