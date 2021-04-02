@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 gdnative = "0.9"
-rapier2d = "0.6"
+rapier2d = "0.7"
 
 [lib]
 crate-type = ["cdylib","staticlib"]
