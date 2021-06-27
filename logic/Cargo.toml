@@ -15,6 +15,7 @@ instant = { git = "https://github.com/extrawurst/instant.git", rev="9447392" }
 [lib]
 crate-type = ["cdylib"]
 
+# emscripten will only work in release build
 [profile.release]
 # debug = true      
 # opt-level = 1     # easier debugging
