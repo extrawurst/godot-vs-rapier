@@ -3,10 +3,20 @@ name = "logic"
 version = "0.1.0"
 authors = ["Stephan Dilly <dilly.stephan@gmail.com>"]
 edition = "2018"
+resolver = "2"
 
 [dependencies]
 gdnative = "0.9"
-rapier2d = "0.7"
+rapier2d = { version = "0.7" }
+
+[patch.crates-io]
+instant = { git = "https://github.com/extrawurst/instant.git", rev="9447392" }
 
 [lib]
-crate-type = ["cdylib","staticlib"]
+crate-type = ["cdylib"]
+
+[profile.release]
+# debug = true      
+# opt-level = 1     # easier debugging
+opt-level = "s"     # smaller library
+lto = true          # wont work without lto

@@ -1,6 +1,9 @@
 [gd_resource type="GDNativeLibrary" format=2]
 
 [resource]
-entry/OSX.64 = "res://lib/liblogic.dylib"
+entry/HTML5.wasm32 = "res://../logic/target/wasm32-unknown-emscripten/release/logic.wasm"
+entry/OSX.64 = "res://../logic/target/release/liblogic.dylib"
 entry/iOS.arm64 = "res://lib/ios/liblogic.a"
+dependency/HTML5.wasm32 = [  ]
 dependency/OSX.64 = [  ]
+dependency/iOS.arm64 = [  ]
