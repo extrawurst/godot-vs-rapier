@@ -39,7 +39,7 @@ build-web:
 	EMCC_STRICT=1 \
 	CARGO_PROFILE_RELEASE_PANIC=abort \
 	CARGO_TARGET_WASM32_UNKNOWN_EMSCRIPTEN_LINKER="./emcc.sh" \
-	cargo b --release --target wasm32-unknown-emscripten -v
+	cargo b --release --target wasm32-unknown-emscripten
 	exa -la target/wasm32-unknown-emscripten/release/logic.wasm
 	wasm-validate target/wasm32-unknown-emscripten/release/logic.wasm
 
