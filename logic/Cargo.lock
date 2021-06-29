@@ -353,7 +353,7 @@ dependencies = [
 [[package]]
 name = "instant"
 version = "0.1.9"
-source = "git+https://github.com/extrawurst/instant.git?rev=671a8de#671a8de6b65614d587154b228017078c373d4304"
+source = "git+https://github.com/sebcrozet/instant.git?rev=ebce2bb#ebce2bb056a23b9e2d45db36fbd76fed220d04ff"
 dependencies = [
  "cfg-if",
  "time",

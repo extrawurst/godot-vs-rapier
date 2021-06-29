@@ -10,7 +10,7 @@ gdnative = "0.9"
 rapier2d = { version = "0.7" }
 
 [patch.crates-io]
-instant = { git = "https://github.com/extrawurst/instant.git", rev="671a8de" }
+instant = { git = "https://github.com/sebcrozet/instant.git", rev="ebce2bb" }
 
 [lib]
 crate-type = ["cdylib"]
