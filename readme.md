@@ -7,3 +7,7 @@ This project pits godots built-in physics against Rapier. It uses [godot-rust](h
 ![demo](demo.gif)
 
 **note**: Godots built-in physics has an open issue for the instability when stacking a lot of rigid bodies: https://github.com/godotengine/godot/issues/2092
+
+## WebGL
+
+demo: https://extrawurst.github.io/godot-vs-rapier
