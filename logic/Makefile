@@ -23,11 +23,13 @@ fix-emc:
 	mv "$(EMSDK)/upstream/bin/wasm-opt" "$(EMSDK)/upstream/bin/wasm-opt.bak"
 	cp wasm-opt "$(EMSDK)/upstream/bin/wasm-opt"
 
+# 
 clean-web:
 	rm target/wasm32-unknown-emscripten/release/logic.wasm || true
 	rm target/wasm32-unknown-emscripten/release/deps/logic.wasm || true
 	rm target/wasm32-unknown-emscripten/release/deps/logic.wasm.map || true
 
+# single command to quick iteration
 rebuild-web: clean-web build-web
 
 build-web:
