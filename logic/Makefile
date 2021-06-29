@@ -32,7 +32,7 @@ rebuild-web: clean-web build-web
 
 build-web:
 	RUSTFLAGS="-C link-args=-fPIC -C relocation-model=pic -C target-feature=-reference-types,+mutable-globals,-atomics,-simd128,-nontrapping-fptoint,-bulk-memory,-crt-static,-exception-handling,-multivalue,-sign-ext,-tail-call" \
-	EMMAKEN_CFLAGS="-Wl,--gc-sections -Wl,--strip-all -O0 -s DISABLE_EXCEPTION_THROWING=1 -s MODULARIZE=1 -s INVOKE_RUN=0 -s STRICT=1 -s SIDE_MODULE=1 -s USE_PTHREADS=0 -s ENVIRONMENT=web -s USE_SDL=0 -s USE_SDL_IMAGE=0 -s USE_SDL_TTF=0 -s USE_SDL_NET=0 -s USE_SDL_MIXER=0" \
+	EMMAKEN_CFLAGS="-Wl,--gc-sections -Wl,--strip-all -O1 -s DISABLE_EXCEPTION_THROWING=1 -s MODULARIZE=1 -s INVOKE_RUN=0 -s STRICT=1 -s SIDE_MODULE=1 -s USE_PTHREADS=0 -s ENVIRONMENT=web -s USE_SDL=0 -s USE_SDL_IMAGE=0 -s USE_SDL_TTF=0 -s USE_SDL_NET=0 -s USE_SDL_MIXER=0" \
 	EMCC_CFLAGS="" \
 	C_INCLUDE_PATH="$(EMSDK)/upstream/emscripten/cache/sysroot/include/" \
 	EMCC_STRICT=1 \
