@@ -10,4 +10,4 @@ This project pits godots built-in physics against Rapier. It uses [godot-rust](h
 
 ## WebGL
 
-demo: https://extrawurst.github.io/godot-vs-rapier
+demo: https://extrawurst.github.io/godot-vs-rapier/
