@@ -23,14 +23,28 @@ fix-emc:
 	mv "$(EMSDK)/upstream/bin/wasm-opt" "$(EMSDK)/upstream/bin/wasm-opt.bak"
 	cp wasm-opt "$(EMSDK)/upstream/bin/wasm-opt"
 
+clean-web:
+	rm target/wasm32-unknown-emscripten/release/logic.wasm || true
+	rm target/wasm32-unknown-emscripten/release/deps/logic.wasm || true
+	rm target/wasm32-unknown-emscripten/release/deps/logic.wasm.map || true
+
+rebuild-web: clean-web build-web
+
 build-web:
-	RUSTFLAGS="-C link-args=-fPIC -C relocation-model=pic" \
-	EMMAKEN_CFLAGS="-s STRICT=1 -s SIDE_MODULE=1 -shared -Wl,--no-check-features -all" \
+	RUSTFLAGS="-C link-args=-fPIC -C relocation-model=pic -C target-feature=-reference-types,+mutable-globals,-atomics,-simd128,-nontrapping-fptoint,-bulk-memory,-crt-static,-exception-handling,-multivalue,-sign-ext,-tail-call" \
+	EMMAKEN_CFLAGS="-Wl,--gc-sections -Wl,--strip-all -O0 -s DISABLE_EXCEPTION_THROWING=1 -s MODULARIZE=1 -s INVOKE_RUN=0 -s STRICT=1 -s SIDE_MODULE=1 -s USE_PTHREADS=0 -s ENVIRONMENT=web -s USE_SDL=0 -s USE_SDL_IMAGE=0 -s USE_SDL_TTF=0 -s USE_SDL_NET=0 -s USE_SDL_MIXER=0" \
+	EMCC_CFLAGS="" \
 	C_INCLUDE_PATH="$(EMSDK)/upstream/emscripten/cache/sysroot/include/" \
-	EMCC_DEBUG=1 \
+	EMCC_STRICT=1 \
 	CARGO_PROFILE_RELEASE_PANIC=abort \
 	CARGO_TARGET_WASM32_UNKNOWN_EMSCRIPTEN_LINKER="./emcc.sh" \
-	cargo b --release --target wasm32-unknown-emscripten
+	cargo b --release --target wasm32-unknown-emscripten -v
+	exa -la target/wasm32-unknown-emscripten/release/logic.wasm
+	wasm-validate target/wasm32-unknown-emscripten/release/logic.wasm
 
 build-web-docker:
 	docker run -it -v $(shell pwd):/logic rust_emcc /bin/bash -lc "cd /logic && make fix-emc && make build-web"
+
+# prints rust and llvm specific features we can use for emscripten compilation
+help-emcc:
+	rustc --target wasm32-unknown-emscripten --print target-features
