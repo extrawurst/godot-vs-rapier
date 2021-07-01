@@ -10,4 +10,6 @@ This project pits godots built-in physics against Rapier. It uses [godot-rust](h
 
 ## WebGL
 
+finally the webgl export of godot games using gdnative rust works (see the [whole conversation](https://github.com/godot-rust/godot-rust/issues/647))
+
 demo: https://extrawurst.github.io/godot-vs-rapier/
