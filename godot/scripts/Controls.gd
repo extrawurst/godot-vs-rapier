@@ -7,7 +7,7 @@ func _ready():
 	box = load("res://scenes/GodotBox.tscn");
 
 func _process(_delta):
-	get_node("../LabelFps").text = "FSP: "+String(Engine.get_frames_per_second());
+	get_node("../LabelFps").text = "FPS: "+String(Engine.get_frames_per_second());
 	
 	if Input.is_action_pressed("click"):
 		var pos = get_global_mouse_position();
